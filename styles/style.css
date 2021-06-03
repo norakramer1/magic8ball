@@ -1,0 +1,139 @@
+
+html{
+  background-color: black;
+  color: white;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+textarea {
+  margin: 0px;
+  width: 434px;
+  height: 63px;
+}
+
+button{
+ background-color: white;
+ color: black;
+ border: none;
+ padding: 5% 10% 5% 10%;
+ text-align: center;
+ text-decoration: none;
+}
+
+div.ball {
+ margin-top: 10%;
+ background-color: black;
+ width: 500px;
+ height: 500px;
+ border-radius: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ box-shadow: 10px 20px 100px 20px #6a0dad;
+
+}
+
+/* groter worden bij hover */
+@keyframes pulse {
+   0% {
+ transform:scale(1);
+   }
+
+  50% {
+ transform:scale(1.05);
+  }
+
+  100% {
+ transform:scale(1);
+  }
+
+}
+
+div.ball:hover  {
+  animation-name: pulse;
+  animation-duration:3s;
+}
+
+div.innerCircle {
+background-color: #222222;
+width: 250px;
+height: 250px;
+border-radius: 100%;
+display: flex;
+justify-content: center;
+
+}
+
+div.driehoek {
+width: 0;
+height: 20%;
+border-left: 80px solid transparent;
+border-right: 80px solid transparent;
+border-bottom: 120px solid #341d5c;
+/* credit glow effect: https://codersblock.com/blog/creating-glow-effects-with-css/ */
+}
+
+ p.antwoord {
+  height: 420%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p.antwoord.fadeIn {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out 1;
+}
+
+div.ball.shake {
+  animation: shaking 0.5s ease-in-out .1s;
+
+}
+
+/* fade in van antwoord op vraag */
+@keyframes fadeIn{
+  0%,
+  20%,
+  40%,
+  60% {
+    opacity:0
+  }
+100% {
+  opacity:1
+ }
+}
+
+/* shaking bal */
+/* keyframes patroon credit: https://www.youtube.com/watch?v=DZYcidT2T14 */
+@keyframes shaking {
+   0% {
+ transform:translate(0);
+   }
+   20%,
+   40%,
+   60%,
+   80%{
+     transform:translate(0.5%);
+   }
+10%,
+30%,
+50%{
+  transform:translate(-0.5%);
+}
+70%,
+100% {
+  transform:translate(0);
+  }
+}
